@@ -1,5 +1,6 @@
-Maeket Operator
-This code mainly implements the "market" part of the P2P power trading system. It generates buy and sell orders based on the "import energy/export energy" of households. It uses the ZIP pricing strategy within the tariff price range to shout the orders, then conducts matching through the Continuous Double Auction (CDA), and finally outputs the transaction results and uncompleted orders.
+Market Operator
+
+This code mainly implements the "market" part of the P2P power trading system. It generates buy and sell orders based on the "import energy/export energy" of households. It uses the ZIP pricing strategy within the tariff price range to generate bid/ask prices for the orders, then conducts matching through the Continuous Double Auction (CDA), and finally outputs the transaction results and unmatched orders.
 
 - `main.py`: main entry point
 - `cda.py`: CDA market clearing mechanism
