@@ -24,4 +24,3 @@ Expected input
  - 'num_trades'
  - 'num_unmatched_orders'
  - 'matched_records'
-   
