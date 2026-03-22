@@ -1,6 +1,6 @@
 Market Operator
 
-This code mainly implements the "market" part of the P2P power trading system. It generates buy and sell orders based on the "import energy/export energy" of households. It uses the ZIP pricing strategy within the tariff price range to generate bid/ask prices for the orders, then conducts matching through the Continuous Double Auction (CDA), and finally outputs the transaction results and unmatched orders.
+This code is the "market" part of the P2P power trading system. It generates buy and sell orders based on the "import energy/export energy" of households. It uses the ZIP pricing strategy within the tariff price range to generate bid/ask prices for the orders, then conducts matching through the Continuous Double Auction (CDA), and finally outputs the transaction results and unmatched orders.
 
 - `main.py`: main entry point
 - `cda.py`: CDA market clearing mechanism
@@ -11,7 +11,7 @@ This code mainly implements the "market" part of the P2P power trading system. I
 - `test_household.py`: random test household generation
 
 It includes zip_strategy.py, tariff.py and test_household.py for testing.
-However, eventually, zip_strategy.py will be moved to the household module, tariff.py will be moved to the main grid module, and test_household.py will be removed.
+However, zip_strategy.py will be moved to the household module, tariff.py will be moved to the main grid module, and test_household.py will be removed finally.
 
 Expected input
 - `DateTime`
