@@ -28,4 +28,3 @@ When integrated into the full system, the market module will keep only the core 
 - zip_strategy.py will be moved to the Household Agent module
 - tariff.py will be moved to the Main Grid module
 - test_household.py will be removed
-
