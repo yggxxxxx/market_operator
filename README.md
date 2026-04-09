@@ -31,6 +31,7 @@ When integrated into the full system, the market module will keep only the core 
 
 
 Update
+
 zip_strategy.py
 - bidirectional conversion between margin and price, `price_from_margin()` and `margin_from_price()`
 - added a target-price generation function `target_price()`
