@@ -28,3 +28,27 @@ When integrated into the full system, the market module will keep only the core 
 - zip_strategy.py will be moved to the Household Agent module
 - tariff.py will be moved to the Main Grid module
 - test_household.py will be removed
+
+
+Update
+zip_strategy.py
+- bidirectional conversion between margin and price, `price_from_margin()` and `margin_from_price()`
+- added a target-price generation function `target_price()`
+- update mechanism `update_from_market_signal()`
+- new parameter ranges, the `c` parameter, `last_delta`
+These modifications have made the pricing logic more modular and closer to a structured ZIP learning process
+
+cda.py
+- the old version linked ZIP strategies through `order_id`, while the new version uses `trader_registry` and `trader_key` to manage trader state
+- separates buyer-side and seller-side update logic, making post-trade and no-trade order updates more explicit
+
+order_book.py
+- add `trader_key`, `submission_seq`, and `submission_counter` to track trader identity and order submission order
+- in the old version, orders with the same price were prioritised by remaining quantity, the new version changes this to submission order, making the book to the price-time priority, follow FIFO
+
+main.py
+- the old version supported a single market-clearing run for one timeslot, while the new version adds `gen_orders_and_slot()`, `run_one_slot()`, and `run_market_sessions()` to support multi-timeslot market sessions
+- add `trader_registry` and `trader_key`, so ZIP trader state is no longer managed only at the individual-order level and can be reused more naturally across timeslots
+
+test_household.py
+- changed from random test data generation to fixed test data
