@@ -23,8 +23,8 @@ class CDA_mechanism:
         self,
         order_book,
         trader_registry,
-        max_trade_rounds=150,
-        max_no_trade_rounds=50,
+        max_trade_rounds=30,
+        max_no_trade_rounds=15,
         verbose=True,
     ):
         self.order_book = order_book
@@ -192,7 +192,7 @@ class CDA_mechanism:
                 MarketSignal(
                     reference_price=trade_price,
                     accepted=True,
-                    last_shout_type="ask"
+                    last_shout_type="bid"
                 )
             )
 
@@ -224,7 +224,7 @@ class CDA_mechanism:
                 MarketSignal(
                     reference_price=trade_price,
                     accepted=True,
-                    last_shout_type="bid"
+                    last_shout_type="ask"
                 )
             )
 
