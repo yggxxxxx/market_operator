@@ -113,18 +113,25 @@ class ZIPStrategy:
         q = signal.reference_price
         q = limited_price(q, self.fit_price, self.tou_price)
 
-        if action == "none":
+         if action == "none":
             return current_price
-        elif action == "raise":
-            base = max(current_price, q)
-            tau = base * (1.0 + self.c)
-            return limited_price(tau, self.fit_price, self.tou_price)
-        elif action == "lower":
-            base = min(current_price, q)
-            tau = base * (1.0 - self.c)
-            return limited_price(tau, self.fit_price, self.tou_price)
-        else:
-            raise ValueError(f"Unknown action: {action}")
+
+        if self.side == "sell":
+            if action == "raise":
+                base = max(current_price, q)
+                tau = base * (1.0 + self.c)
+            else: 
+                base = min(current_price, q)
+                tau = base * (1.0 - self.c)
+        else:  # buy
+            if action == "raise":
+                base = min(current_price, q)
+                tau = base * (1.0 - self.c)
+            else:  
+                base = max(current_price, q)
+                tau = base * (1.0 + self.c)
+
+        return limited_price(tau, self.fit_price, self.tou_price)
 
     def generate_shout(self, fit_price, tou_price):
         if fit_price <= 0:
