@@ -113,7 +113,7 @@ class ZIPStrategy:
         q = signal.reference_price
         q = limited_price(q, self.fit_price, self.tou_price)
 
-         if action == "none":
+        if action == "none":
             return current_price
 
         if self.side == "sell":
