@@ -57,12 +57,16 @@ test_household.py
 update
 zip_strategy.py
 - line 8 c range changes from 0-0.05 to 0-0.03
+- line 41 change bid to ask
+- line 52 change ask to bid
 - line 112 target price
 
 cda.py
 - line 26/27 change the number of round
 - line 195 change ask to bid
-- line 277 change bid to ask
+- line 227 change bid to ask
+- line 270 change ask to bid
+- line 305 change bid to ask
 
 main.py
 - line 170/171 change the number of round
