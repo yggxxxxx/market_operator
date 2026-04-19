@@ -5,7 +5,7 @@ import random
 beta_range = (0.1, 0.5)
 gamma_range = (0.0, 0.1)
 margin_range = (0.05, 0.35)
-c_range = (0.0, 0.05)
+c_range = (0.0, 0.03)
 
 
 @dataclass
