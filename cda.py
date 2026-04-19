@@ -23,8 +23,8 @@ class CDA_mechanism:
         self,
         order_book,
         trader_registry,
-        max_trade_rounds=30,
-        max_no_trade_rounds=15,
+        max_trade_rounds=50,
+        max_no_trade_rounds=20,
         verbose=True,
     ):
         self.order_book = order_book
